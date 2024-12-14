@@ -1,0 +1,315 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+
+.glassmorphic-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+  backdrop-filter: blur(10px); /* Apply blur for glassmorphic effect */
+  -webkit-backdrop-filter: blur(10px); /* Safari support */
+  z-index: 9999; /* Ensure it covers everything */
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Center the box */
+  /* Start as invisible */
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out; /* Slow transition */
+}
+
+.Logo-Image-Modal {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  bottom: 2rem;
+}
+.Logo-Image-Modal img {
+  width: 4rem;
+  height: 2.5rem;
+}
+
+.glassmorphic-overlay.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-box {
+  background: white; /* Slightly more opaque for readability */
+  padding: 1.1rem;
+  border-radius: 2rem;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.393);
+  max-width: 33.3rem;
+  height: 40rem;
+  width: 90%; /* Responsive design */
+  text-align: center;
+  transition: opacity 1s ease-in-out; /* Transition for opacity */
+  animation: fadeIn 0.5s ease-in-out; /* Slow animation */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.modal-content {
+  overflow-y: auto; /* Allow scrolling */
+  max-height: calc(100% - 11rem); /* Ensure modal box padding is considered */
+}
+
+/* Styling for the h2 element inside the modal */
+.modal-box h1 {
+  font-size: 2.5rem; /* Larger font size */
+  font-weight: 800; /* Bold text */
+  font-family: "Comic Neue", sans-serif;
+  color: black;
+  margin-bottom: 1rem; /* Space below the heading */
+}
+
+/* Styling for the p element inside the modal */
+.modal-box p {
+  font-size: 1.3rem; /* Medium font size */
+  color: #393939; /* Lighter gray text color */
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 500;
+  margin-bottom: 20px; /* Space below the paragraph */
+  line-height: 1; /* Adjust line spacing for better readability */
+}
+
+/* Styling for the button-container */
+.button-container {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Vertically center the content */
+  justify-content: center; /* Align content to the left */
+  gap: 10px; /* Add space between text and button */
+}
+
+.button-container p {
+  margin: 0; /* Remove default margin for the <p> */
+  font-size: 1.3rem; /* Adjust font size as needed */
+  color: #333; /* Text color */
+  font-family: "Comic Neue", sans-serif;
+}
+
+/* Fade-out class for transitioning the modal out */
+.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Fade-in class for transitioning the modal in */
+.fade-in {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.Switch-buttons {
+  background: none; /* Remove background */
+  border: none; /* Remove border */
+  padding: 0; /* Remove padding */
+  color: red; /* Set text color (you can change this to your preference) */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  font-family: "Comic Neue", sans-serif;
+  font-weight: bold;
+  cursor: pointer; /* Change cursor to pointer to indicate it's clickable */
+  transition: color 0.5s; /* Smooth transition for color on hover */
+}
+
+.Switch-buttons:hover {
+  color: green; /* Change color on hover (optional) */
+}
+
+/* Close button (X) styling */
+.close-btn {
+  position: relative;
+  top: 0;
+  left: 30rem;
+  background: none; /* No background */
+  border: none; /* No border */
+  color: #333; /* Dark color for visibility */
+  font-size: 1.6rem; /* Size of the X */
+  font-family: "Comic Neue", sans-serif;
+  font-weight: bold;
+  width: 3rem;
+  cursor: pointer; /* Pointer cursor on hover */
+  font-weight: bold; /* Make the X bold */
+  transition: color 0.3s ease; /* Smooth transition for color */
+  z-index: 1;
+  transition: color 0.5s;
+}
+
+.close-btn:hover {
+  color: green; /* Change color to red when hovered */
+}
+
+/* Remove default eye icon from password field */
+.modal-box input[type="password"],
+.modal-box input[type="text"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+}
+
+/* Add this to prevent any other style overrides */
+.modal-box input[type="password"]::-ms-reveal,
+.modal-box input[type="text"]::-ms-reveal {
+  display: none; /* IE/Edge */
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+.input-container input {
+  width: 80%;
+  padding: 10px;
+  margin: 5px 0;
+  border: 0.1rem solid #646464;
+  background-color: #007bff14;
+  border-radius: 5px;
+}
+
+.password-input,
+.password-input-confirm {
+  position: relative;
+}
+
+.eye-btn,
+.eye-btn-sign,
+.eye-btn-confirm {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 80%;
+  padding: 10px;
+  background-color: red;
+  color: white;
+  font-size: 1.2rem;
+  font-family: "Comic Neue", sans-serif;
+  font-weight: bold;
+  border: 0.1rem solid #000000;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.5s, box-shadow 0.5s;
+}
+
+.login-btn:hover {
+  background-color: green;
+  box-shadow: 0 2px 10px green;
+}
+
+.error-message {
+  color: red;
+  font-size: 12px;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.social-button-container {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 2rem;
+}
+
+.social-button-container p {
+  color: #000000;
+  font-size: 1.3rem;
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 800;
+  margin: 1rem;
+}
+
+.social-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Increased gap for better spacing */
+}
+
+.social-btn {
+  width: 3rem;
+  height: 3rem;
+  border: 0.1rem solid black;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 20%;
+  cursor: pointer;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  font-size: 24px;
+  position: relative;
+  overflow: hidden; /* To ensure the background doesn't overflow */
+}
+
+.social-btn:hover {
+  transform: scale(1.1);
+}
+
+.microsoft-btn {
+  background-color: #f0f0f0; /* Light gray for Microsoft */
+  transition: background-color 0.5s, color 0.5s, border 0.5s, box-shadow 0.5s;
+}
+
+.microsoft-btn:hover {
+  background-color: #000000; /* Light gray for Microsoft */
+  color: white;
+  border: 0.15rem solid rgb(86, 86, 86);
+  box-shadow: 0px 4px 10px rgb(0, 0, 0);
+}
+
+.google-btn {
+  background-color: #ff8800; /* Google blue */
+  transition: background-color 0.5s, color 0.5s, border 0.5s, box-shadow 0.5s;
+}
+
+.google-btn:hover {
+  background-color: #ce0000; /* Light gray for Microsoft */
+  color: white;
+  border: 0.15rem solid rgb(86, 86, 86);
+  box-shadow: 0px 4px 10px rgb(0, 0, 0);
+}
+
+.twitter-btn {
+  background-color: #1da1f2; /* Twitter blue */
+  transition: background-color 0.5s, color 0.5s, border 0.5s, box-shadow 0.5s;
+}
+
+.twitter-btn:hover {
+  background-color: #1d44f2; /* Light gray for Microsoft */
+  color: white;
+  border: 0.15rem solid rgb(86, 86, 86);
+  box-shadow: 0px 4px 10px rgb(0, 0, 0);
+}
+
+/* Optional: Adjust icon size for better alignment */
+.social-btn i {
+  font-size: 1.5rem; /* Adjust the icon size */
+}

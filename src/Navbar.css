@@ -1,0 +1,305 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* NavBar.css */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed; /* Keeps it always visible */
+  top: 0;
+  width: 100%;
+  background-color: rgba(37, 37, 37, 0.499);
+  backdrop-filter: blur(0.825rem); /* Apply a blur effect to the background */
+  -webkit-backdrop-filter: blur(0.825rem); /* For Safari support */
+  z-index: 9999;
+  padding: 2rem 1rem;
+  border-radius: 0.825rem; /* Rounded corners for the navbar */
+  box-shadow: 0 1rem 1rem rgba(255, 255, 255, 0.1); /*Soft shadow for a floating effect */
+}
+
+/* Sidebar (Left side for navigation buttons) */
+.sidebar {
+  position: fixed;
+  top: 60px; /* Below the navbar */
+  left: 0;
+  width: 10rem; /* Width of the sidebar */
+  height: 100%;
+  background-color: rgba(37, 37, 37, 0.499);
+  backdrop-filter: blur(0.825rem); /* Apply a blur effect to the background */
+  -webkit-backdrop-filter: blur(0.825rem); /* For Safari support */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 20px;
+  z-index: 999;
+  box-shadow: 0 1rem 1rem rgba(255, 255, 255, 0.1); /*Soft shadow for a floating effect */
+}
+
+.sidebar nav button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  margin: 20px 0;
+  padding: 10px;
+  transition: background-color 0.3s;
+  font-family: "Comic Neue", sans-serif;
+}
+
+.sidebar nav button.active {
+  border-radius: 50%;
+}
+
+/* Optional: Adjust icon size */
+.sidebar nav button .fa {
+  font-size: 1.5rem; /* Increase size of icons */
+}
+
+.nav-icon {
+  margin-right: 1rem;
+}
+
+.right-align {
+  position: absolute;
+  right: 3rem; /* Align the LOGIN button to the right side */
+  top: 3rem;
+  z-index: 9999;
+  font-family: "Comic Neue", sans-serif;
+  font-size: 1.3rem;
+  font-weight: 900;
+  background: #04ad83;
+  width: 10rem;
+  height: 3rem;
+  border-radius: 2rem;
+  border: white 0.1rem solid;
+  transition: background 1s ease-in-out, box-shadow 0.5s ease,
+    border 1s ease-in-out; /* Adds a delay of 1 second */
+}
+
+.right-align:hover {
+  background: linear-gradient(
+    to left,
+    rgb(0, 255, 0) 0%,
+    rgb(110, 255, 113) 30%,
+    rgb(110, 255, 113) 70%,
+    rgb(0, 255, 0) 100%
+  );
+  /* box-shadow: 0.2rem 0.3rem 0.3rem rgb(160, 255, 97); */
+  border: 0.15rem solid rgb(3, 50, 0);
+}
+
+nav button:hover,
+.dropbtn:hover {
+  color: red;
+}
+
+/* Active state - applies the hover effect */
+nav button.active,
+.dropbtn.active {
+  color: red;
+}
+
+.Logo-Image {
+  position: relative;
+  margin-left: 60rem;
+  margin-right: 110rem; /* Adds space from the left */
+  cursor: pointer;
+  z-index: 1000;
+  opacity: 0; /* Start invisible */
+  transform: translateY(25rem) scale(8); /* Start large and below */
+  animation: fadeInUp 1s ease-out forwards; /* Apply the animation */
+}
+
+/* Keyframes for the fade-in, move-up, and scale-down effect */
+@keyframes fadeInUp {
+  0% {
+    opacity: 1; /* Initially invisible */
+    transform: translateY(25rem) scale(8); /* Start large and far below */
+  }
+  100% {
+    opacity: 1; /* Fully visible */
+    transform: translateY(0) scale(1.5); /* Final position at original size */
+  }
+}
+
+/* Keyframes for the fade-out and move-down effect */
+@keyframes fadeOutDown {
+  0% {
+    opacity: 1;
+    transform: translateY(0) scale(1.5); /* Start at its normal position */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(25rem) scale(8); /* Move below while fading out */
+  }
+}
+
+/* Applying the fadeOutDown animation when entering the home section */
+.Logo-Image.fade-out {
+  animation: fadeOutDown 1s ease-in forwards;
+}
+
+.Logo-Image img {
+  width: 60px; /* Adjust size as needed */
+  height: 50px;
+  filter: drop-shadow(0 0 10px green); /* Apply green border effect */
+  transition: filter 0.3s ease-in-out; /* Add a smooth hover effect */
+}
+
+.Logo-Image img:hover {
+  filter: drop-shadow(0 0 10px limegreen); /* Intensify the effect on hover */
+}
+
+.dropdown {
+  z-index: 9999;
+  position: relative;
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  list-style: none;
+  background-color: #f9f9f9;
+  width: 6rem;
+  border: 0.1rem solid rgb(115, 115, 115);
+  border-radius: 1rem;
+  padding: 0.2rem;
+  box-shadow: 0 0.34rem 0.46rem rgb(0, 0, 0);
+  min-width: 3.4rem; /* Adjusted for a larger dropdown */
+  z-index: 9999;
+  left: 50%; /* Center the dropdown relative to the button */
+  transform: translateX(
+    -50%
+  ); /* Move it back by 50% of its width to center it */
+  text-align: center; /* Optional: center the text inside the dropdown */
+}
+
+.dropdown-content .item {
+  position: relative;
+  z-index: 9999;
+}
+
+.dropdown-content .item a {
+  color: black;
+  font-size: 1.25rem;
+  text-decoration: none;
+  display: block;
+  width: 3.4rem; /* Set width for circular shape */
+  height: 3.4rem; /* Set height for circular shape */
+  padding: 0; /* Remove padding to maintain circular size */
+  border: 0.18rem solid black;
+  border-radius: 50%; /* Make it circular */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent; /* Background color for the circular container */
+  margin: 1.25rem auto; /* Adjust margins to center the circles */
+  position: relative;
+  overflow: hidden;
+  z-index: 9999;
+  transition: 0.5s ease;
+}
+
+.dropdown-content .item a:hover {
+  color: white;
+}
+
+.dropdown-content .item a::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--bg-color); /* Use dynamic background colors */
+  z-index: -1;
+  scale: 1 0;
+  transform-origin: bottom;
+  transition: scale 0.5s ease;
+}
+
+.dropdown-content .item:hover a::before {
+  scale: 1 1;
+}
+
+.dropdown-content .icon {
+  font-size: 1.5rem; /* Adjust as needed */
+  color: white;
+  z-index: 2;
+  transition: 0.5s ease;
+}
+
+.dropdown-content .item a:hover .icon {
+  transform: rotateY(360deg);
+  color: #fff;
+}
+
+/* Example gradient backgrounds for the items */
+.dropdown-content .item:nth-child(1) {
+  --bg-color: linear-gradient(to bottom right, #000000, #ffffff);
+}
+.dropdown-content .item:nth-child(2) {
+  --bg-color: linear-gradient(to bottom right, #f9ce34, #ee2a7b, #6228d7);
+}
+.dropdown-content .item:nth-child(3) {
+  --bg-color: linear-gradient(to bottom right, #ff9800, #e0e0e0);
+}
+.dropdown-content .item:nth-child(4) {
+  --bg-color: linear-gradient(to bottom right, #7289da, #1e3047, #01233d);
+}
+
+/* Container for the search bar */
+.search-container {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  left: 1rem;
+  z-index: 1000;
+}
+
+/* Search icon */
+.search-icon {
+  font-size: 1.6rem !important;
+  cursor: pointer;
+  color: white;
+  transition: transform 0.3s ease;
+}
+
+.search-icon:active {
+  color: red;
+}
+
+.search-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+
+/* Search bar */
+.search-bar {
+  width: 0;
+  opacity: 0;
+  border: none;
+  outline: none;
+  padding: 0.5rem;
+  border-radius: 20px;
+  transition: width 0.5s ease, opacity 0.3s ease;
+  margin-left: 0.5rem;
+  background-color: #f1f1f1;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  font-family: "Comic Neue", sans-serif;
+  font-weight: 700;
+}
+
+/* Visible state for the search bar */
+.search-bar.visible {
+  width: 23rem;
+  opacity: 1;
+}

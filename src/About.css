@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap");
+
+.about-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh; /* Optional: to center it vertically as well */
+}
+
+.about-section h1 {
+  font-size: 3rem;
+  font-family: "Cormorant Garamond", serif;
+  font-weight: bolder;
+}
+
+.glassmorphic-container {
+  width: 65%; /* 60% of the section's width */
+  height: 85%; /* 70% of the section's height */
+  background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+  border-radius: 2rem; /* Rounded corners */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
+  backdrop-filter: blur(2rem); /* Glass effect */
+  -webkit-backdrop-filter: blur(2rem); /* Safari compatibility */
+  border: 0.1rem solid rgba(255, 255, 255, 0.3); /* Transparent border */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.glassmorphic-container h1 {
+  font-size: 2.4rem;
+  color: #000000; /* White text for contrast */
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 800;
+  top: 0;
+}
+
+.glassmorphic-container p {
+  font-size: 1.3rem;
+  color: #000000; /* White text for contrast */
+  font-family: "Cormorant Garamond", serif;
+  font-weight: 400;
+  margin: 0 4rem; /* Reset margin */
+}

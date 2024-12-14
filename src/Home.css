@@ -1,0 +1,64 @@
+.GraphsTab {
+  position: absolute;
+  display: block;
+  right: 1rem;
+  bottom: 10rem;
+  width: 30rem;
+  height: 65vh;
+  background-color: rgba(255, 255, 255, 0.048);
+  color: white;
+  box-shadow: 0 0.34rem 0.46rem rgba(255, 255, 255, 0.549);
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+.NewsTab {
+  position: absolute;
+  left: 50%;
+  bottom: 4rem;
+  width: 80rem;
+  background-color: rgba(255, 255, 255, 0.048);
+  box-shadow: 0 0.34rem 0.46rem rgba(255, 255, 255, 0.549);
+  padding: 1rem;
+  transform: translateX(-50%);
+  overflow-x: hidden;
+}
+
+.news-text {
+  display: flex;
+  flex-wrap: nowrap;
+  color: white;
+}
+
+.news-item {
+  margin-right: 2rem; /* Space between news items */
+  white-space: nowrap; /* Prevent text from breaking */
+}
+
+/* TradingView Widget Container */
+.tradingview-widget-container {
+  position: absolute;
+  top: 12rem;
+  left: 12rem;
+  width: 25rem !important; /* Width of the widget */
+  height: 40rem !important; /* Height of the widget */
+  z-index: 10; /* Ensure it's on top of other elements */
+  background-color: rgba(
+    44,
+    62,
+    80,
+    0.8
+  ); /* Optional: Add a background color with some transparency */
+  padding: 10px;
+  border-radius: 8px; /* Optional: Add some border radius for rounded corners */
+}
+
+/* TradingView Widget Contents */
+.tradingview-widget-container__widget {
+  width: 100%;
+  height: 100%;
+}
+
+.blue-text {
+  color: #3498db; /* Color for the link text */
+}

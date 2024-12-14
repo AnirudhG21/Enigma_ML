@@ -1,0 +1,72 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&display=swap");
+
+.cookie-consent-modal {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40rem;
+  color: rgb(255, 255, 255);
+  font-weight: 800; /* Bold text */
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.5rem;
+  text-shadow: 2px 2px 4px #ff0000;
+  padding: 20px;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  border: 0.2rem solid rgb(255, 255, 255);
+  border-radius: 2rem;
+  box-shadow: 1rem 1rem 2rem rgb(0, 0, 0);
+  z-index: 10000;
+}
+
+.cookie-consent-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(
+    0,
+    0,
+    0
+  ); /* Slight background color for text contrast */
+  padding: 15px;
+  border-radius: 1rem;
+}
+
+.cookie-consent-content button {
+  margin: 10px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: 800; /* Bold text */
+  font-family: "Cormorant Garamond", serif;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  transition: background-color 0.5s ease, color 0.5s, box-shadow 0.5s;
+}
+
+.cookie-consent-content button.accept {
+  background-color: #000000; /* Orange background for accept button */
+  color: white;
+}
+
+.cookie-consent-content button.reject {
+  background-color: #000000; /* Light grey background for reject button */
+  color: rgb(255, 255, 255);
+}
+
+.cookie-consent-content button.accept:hover {
+  background-color: #0000002a;
+  color: rgb(255, 255, 255);
+  box-shadow: 0.2rem 0.2rem 1rem rgb(76, 0, 0);
+}
+
+.cookie-consent-content button.reject:hover {
+  background-color: #000000;
+  color: rgb(255, 255, 255);
+  box-shadow: 0.2rem 0.2rem 1rem white;
+}
